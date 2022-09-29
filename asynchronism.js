@@ -3,35 +3,48 @@
 
 //Let's see how asynchronism works: 
 
-const datospelis = [{
-    id: 1,
-    title: 'Iron man',
-    year: 2008
- },{
-   id: 2,
-   title: 'Spiderman 3',
-   year: 2009
- },{
-   id: 3,
-   title: 'Avengers: Infinitive war',
-   year: 2018
- }];
+// const datospelis = [{
+//     id: 1,
+//     title: 'Iron man',
+//     year: 2008
+//  },{
+//    id: 2,
+//    title: 'Spiderman 3',
+//    year: 2009
+//  },{
+//    id: 3,
+//    title: 'Avengers: Infinitive war',
+//    year: 2018
+//  }];
+
+const datospelis = [];
 
 
 // const getDatos = () => {
 //   return datospelis;
 // }
 
-const getDatos = () => {
-    return new promise((resolve, reject)) => {
-      if (datos.length === 0) {
-        reject(new Error('No existen datos'));
-      }
-      setTimeout(() => {
-        resolve(datospelis);
-      }, 1500);
-    });
-}   
+// const getDatos = () => {
+//     return new Promise((resolve, reject)) => {
+//       if (datos.length === 0) {
+//         reject(new Error('No existen datos'));
+//       }
+//       setTimeout(() => {
+//         resolve(datospelis);
+//       }, 1500);
+//     });
+// }   
+
+    const getDatos = () => {
+        return new Promise((resolve, reject) => {
+            if (datospelis.length === 0) {
+                reject('No existen datos');
+            }
+            setTimeout(() => {
+                resolve(datospelis);
+            }, 1500);
+        })
+    } 
   
   async function fetchingData () {
     try {
