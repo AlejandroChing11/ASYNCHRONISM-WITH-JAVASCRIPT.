@@ -4,8 +4,15 @@ function calculadoraComplete (num1, num2) {   //This function is used to calcula
     console.log("La division de los numeros es", num1 / num2);
 }
 
-function calc(num1, num2, callback) {   //"Calc" is the funciton where we are going to use a callback, there it has 3 parameters: num1, num2, callback. "callback" is the function multiplicaion.
-    return callback(num1, num2);
+calc(10, 5, calculadoraComplete); //we call "calc" with 3 parameters: num1, num2, multiplicacion. "multiplicacion" is the first funcion or the father function.
+
+setTimeout(function () {
+    console.log('Hello, world!');
+}, 2000)
+
+
+function Saludo (name) {
+    console.log('Hello World!', name);
 }
 
-calc(10, 5, calculadoraComplete); //we call "calc" with 3 parameters: num1, num2, multiplicacion. "multiplicacion" is the first funcion or the father function.
+setTimeout(Saludo, 2000, "Alejandro");
