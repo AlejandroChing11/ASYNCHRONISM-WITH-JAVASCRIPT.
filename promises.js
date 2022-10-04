@@ -3,9 +3,9 @@
 //     return('hey!')
 // });
 
-const cats = 15;
+const cats = 1;
 
-const countCats = new promise(function(resolve, reject) {
+const countCats = new Promise(function(resolve, reject) {
     if (cats > 10) {
         resolve('We have all the cats');
     } else {
@@ -15,4 +15,7 @@ const countCats = new promise(function(resolve, reject) {
 
 countCats.then((result) => {
     console.log(result);
+}).catch((error) => {
+    console.log(error);
 });
+
