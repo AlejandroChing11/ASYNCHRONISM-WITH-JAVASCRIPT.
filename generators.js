@@ -21,3 +21,24 @@ console.log(ite.next().value);
 console.log(ite.next().value);
 console.log(ite.next().value);
 console.log(ite.next().value);
+
+
+/*Second example to understand better*/
+function* subSerie() {
+    yield 'Hola';
+    yield 'This is another Generic';
+};
+function* serie(i) {
+    yield i;
+    yield i + 5;
+    yield i * 2;
+    yield* subSerie();
+}
+const genSerie = serie(5);
+const sub = subSerie();
+console.log(genSerie.next().value);
+console.log(genSerie.next().value);
+console.log(genSerie.next().value);
+console.log(sub.next().value);
+console.log(sub.next().value);
+
